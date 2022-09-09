@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Breakfast  shake",
+        "description" : "blah blah blah blah blah blah",
+        "imageURL": "https://cdn.pixabay.com/photo/2015/08/13/13/05/smothie-886984_960_720.jpg"
+    },
+    {
+        "title": "After Gym Smoothie",
+        "description" : "blah blah blah blah blah blah",
+        "imageURL": "https://cdn.pixabay.com/photo/2017/01/20/17/25/detox-1995433_960_720.jpg"
+    },
+    {
+        "title": "Afternoon Smoothie",
+        "description" : "blah blah blah blah blah blah",
+        "imageURL": "https://cdn.pixabay.com/photo/2017/05/29/23/01/drink-2355224_960_720.jpg"
+    },
+    {
+        "title": "After Dinner Smoothie",
+        "description" : "blah blah blah blah blah blah",
+        "imageURL": "https://cdn.pixabay.com/photo/2016/09/29/20/04/smoothie-1703657_960_720.jpg"
+    }    
+]
