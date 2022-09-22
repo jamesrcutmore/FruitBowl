@@ -11,7 +11,7 @@
 
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
-    <title>Fruit bowl - Sign Up</title>
+    <title>Fruit bowl - admin</title>
 
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
@@ -63,15 +63,11 @@
 
                 <li class="nav-item">
 
-                    <a class="nav-link" href="login.html">Log in</a>
+                    <a class="nav-link" href="logout.html">Log out</a>
 
                 </li>
 
-                <li class="nav-item">
-
-                    <a class="nav-link" href="signup.html">Sign up</a>
-
-                </li>
+               
 
             </ul>
 
@@ -115,29 +111,7 @@
 
     </footer>
 
-    <script>
-        jQuery.ajax({
-            'async': false,
-            'global': false,
-            'url': 'recipes.json',
-            'dataType': "json",
-            'success': function (recipes) {
-                //recipes = JSON.stringify(recipes)
-                //console.log(recipes)
-                let output = ``
-                recipes.forEach(recipe => {
-                    output +=`<div class='recipe'>
-                        <h2>${recipe['title']}</h2>
-                        <p>${recipe['description']}</p>
-                        <img src="${recipe['imageURL']}">
-                        </div>`
-                });
-
-                $('#recipes').html(output)
-            }
-        });
-    </script>
-
+    
 </body>
 
  
