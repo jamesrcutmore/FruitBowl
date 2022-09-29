@@ -1,7 +1,7 @@
 #python -m flask run
 from flask import Flask
 from flask import render_template
-
+from flask import request
 
 app = Flask(__name__)
 
@@ -31,6 +31,17 @@ def recipesJSON():
 
 @app.route('/login', methods=['POST'])
 def dashboard():
+   email = request.form['email']
+   password = request.form['password']
+
+   if email == "":
+    return 'Please add a valid email address'
+     
+   elif password == "":
+    return 'Please add a valid password'
+   elif password !="james" or email!="rob_cutmore@hotmail.com":
+    return "Invalid account details"
+   else:
     return render_template('dashboard.html')                       
 
 

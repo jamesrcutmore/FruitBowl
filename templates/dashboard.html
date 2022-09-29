@@ -81,8 +81,23 @@
 
             <div class="col-sm">
 
-            <h1>Recipes</h1>  
+            <h1>Dashboard</h1>
+            <h2>Recipes</h2>  
             <div id="recipes"></div>
+            <hr>
+            <div id="addRecipe">
+                <h2>Add Recipe</h2>
+                <form action="/addReceipe" method="post">
+                    <label for="">Title</label><br>
+                    <input type="text" name="title"><br>
+                    <label for="">Description</label><br>
+                    <textarea name="description"></textarea><br>
+                    <label for="">Image URL</label><br>
+                    <input type="text" name="imageURL"><br>
+                    <input type="submit" value="Add">
+                </form>
+            </div>  
+        
 
     
             </div>
@@ -110,6 +125,34 @@
         <!-- Copyright -->
 
     </footer>
+    <script>
+        jQuery.ajax({
+            'async': false,
+            'global': false,
+            'url': 'recipes.json',
+            'dataType': "json",
+            'success': function (recipes) {
+                //recipes = JSON.stringify(recipes)
+                //console.log(recipes)
+                let output = ``
+                recipes.forEach(recipe => {
+                    output +=`<div class='recipe'>
+                        <h4>${recipe['title']}</h4>
+                        <button onclick="deleteRecipe(${recipe['id']})">delete</button>
+                        <button onclick="editRecipe(${recipe['id']})">edit</button>
+                        </div>`
+                });
+
+                $('#recipes').html(output)
+            }
+        });
+        function deleteRecipe(id){
+            alert(`Deleting the Recipe #${id}`)
+        }
+        function editRecipe(id){
+            alert(`Loading the Recipe #${id} info`)
+        }
+    </script>
 
     
 </body>
