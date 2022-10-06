@@ -2,7 +2,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-
+import json
 app = Flask(__name__)
 
 @app.route('/')
@@ -44,7 +44,21 @@ def dashboard():
    else:
     return render_template('dashboard.html')                       
 
-
+@app.route('/deleteRecipe.html')
+def delete_recipe():
+   
+    id = request.args['id']
+    with open(app.root_path+'/templates/recipes.json') as f:
+        recipes = json.load(f)
+        newReceipes=[]
+        for recipe in recipes:
+            if(recipe['id']!=id):
+                newReceipes.append(recipe)
+                #app.logger.info('testing info log')
+        with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
+            json.dump("test", jsonFile)
+    return "recipes deleted"
+    
 
 if __name__ == '__main__':
     app.debug = True

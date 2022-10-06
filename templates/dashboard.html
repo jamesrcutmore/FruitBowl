@@ -147,7 +147,14 @@
             }
         });
         function deleteRecipe(id){
-            alert(`Deleting the Recipe #${id}`)
+            $.ajax({
+                url: `/deleteRecipe.html?id=${id}`,
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function(res) {
+                    alert(res);
+                }
+            });
         }
         function editRecipe(id){
             alert(`Loading the Recipe #${id} info`)
