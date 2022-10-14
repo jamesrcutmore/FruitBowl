@@ -49,15 +49,35 @@ def delete_recipe():
    
     id = request.args['id']
     with open(app.root_path+'/templates/recipes.json') as f:
+        print(id)
         recipes = json.load(f)
         newReceipes=[]
         for recipe in recipes:
-            if(recipe['id']!=id):
+            if int(recipe['id'])!=int(id):
+                print(recipe['id'])
                 newReceipes.append(recipe)
                 #app.logger.info('testing info log')
         with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
-            json.dump("test", jsonFile)
+            json.dump(newReceipes, jsonFile)
     return "recipes deleted"
+      
+    @app.route('/addRecipe.html')
+    def add_recipe():
+        newRecipe = []
+        newRecipe['title'] = request.args['title']
+        newRecipe['description'] = request.args['description']
+        newRecipe['imageURL'] = request.args['imageURL']
+        print( newRecipe['title'])
+        print( newRecipe['description'])
+        print( newRecipe['imageURL'])
+        with open('recipes.json') as f:
+            allRecipes = []
+            recipes = json.load(f)
+            for recipe in recipes:
+                allRecipes.append(recipe)
+            allRecipes.append(newRecipe)
+            with open("recipes.json", "w") as jsonFile:
+                json.dump(allRecipes, jsonFile)
     
 
 if __name__ == '__main__':
