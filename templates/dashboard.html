@@ -87,15 +87,15 @@
             <hr>
             <div id="addRecipe">
                 <h2>Add Recipe</h2>
-                
+                <form action="addrecipe" method="post">
                     <label for="">Title</label><br>
                     <input type="text" name="title" id="title"><br>
                     <label for="">Description</label><br>
                     <textarea name="description"  id="description"></textarea><br>
                     <label for="">Image URL</label><br>
                     <input type="text" name="imageURL" id="imageURL"><br>
-                    <button onclick="addRecipe()">Add</button>  
-                
+                    <button >Add</button>  
+                </form> 
             </div>  
         
 
@@ -158,19 +158,8 @@
         function editRecipe(id){
             alert(`Loading the Recipe #${id} info`)
         }
-        function addRecipe(){
-            alert("addRecipe")
-  let title = $('#title').val()
-  let description = $('#imageURL').val()
-  let imageURL = $('#imageURL').val()
-  $.ajax({
-      url: `/addRecipe.html?title=${title}&description=${description}&imageURL=${imageURL}`,
-      type: 'GET',
-      dataType: 'json'
-      
-  });
-  window.location.reload()
-}
+        
+ 
     </script>
 
     

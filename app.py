@@ -61,12 +61,13 @@ def delete_recipe():
             json.dump(newReceipes, jsonFile)
     return "recipes deleted"
       
-    @app.route('/addRecipe.html')
-    def add_recipe():
+    @app.route('/addrecipe', methods=['POST'])
+    def addrecipe():
         newRecipe = []
-        newRecipe['title'] = request.args['title']
-        newRecipe['description'] = request.args['description']
-        newRecipe['imageURL'] = request.args['imageURL']
+        print("Hello")
+        newRecipe['title'] = request.form['title']
+        newRecipe['description'] = request.form['description']
+        newRecipe['imageURL'] = request.form['imageURL']
         print( newRecipe['title'])
         print( newRecipe['description'])
         print( newRecipe['imageURL'])
