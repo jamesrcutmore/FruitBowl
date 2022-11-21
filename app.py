@@ -2,6 +2,9 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import redirect
+from random import randint
+
 import json
 app = Flask(__name__)
 
@@ -61,25 +64,29 @@ def delete_recipe():
             json.dump(newReceipes, jsonFile)
     return "recipes deleted"
       
-    @app.route('/addrecipe', methods=['POST'])
-    def addrecipe():
-        newRecipe = []
-        print("Hello")
-        newRecipe['title'] = request.form['title']
-        newRecipe['description'] = request.form['description']
-        newRecipe['imageURL'] = request.form['imageURL']
-        print( newRecipe['title'])
-        print( newRecipe['description'])
-        print( newRecipe['imageURL'])
-        with open('recipes.json') as f:
-            allRecipes = []
-            recipes = json.load(f)
-            for recipe in recipes:
-                allRecipes.append(recipe)
-            allRecipes.append(newRecipe)
-            with open("recipes.json", "w") as jsonFile:
-                json.dump(allRecipes, jsonFile)
+@app.route('/addrecipe', methods=['POST'])
+def addrecipe():
+    newRecipe = {}
+    newRecipe.update({'title' : request.form['title']})
+    newRecipe.update({'description' : request.form['description']})
+    newRecipe.update({'imageURL' : request.form['imageURL']})
+    newRecipe.update({'id' : randint(0, 10000)})
+
+    for value in newRecipe.values():
+	    print(value)
+    with open(app.root_path+'/templates/recipes.json') as f:
+        allRecipes = []
+        recipes = json.load(f)
+        for recipe in recipes:
+            allRecipes.append(recipe)
+        allRecipes.append(newRecipe)
+        with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
+            json.dump(allRecipes, jsonFile)
+        return redirect("dashboard", code=303)
     
+@app.route('/dashboard')
+def show_dashboard():
+    return render_template('dashboard.html')
 
 if __name__ == '__main__':
     app.debug = True
