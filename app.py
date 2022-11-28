@@ -88,6 +88,44 @@ def addrecipe():
 def show_dashboard():
     return render_template('dashboard.html')
 
+@app.route('/edit-recipe.html')
+def edit_recipe():
+   
+    id = request.args['id']
+    with open(app.root_path+'/templates/recipes.json') as f:
+        print(id)
+        recipes = json.load(f)
+        recipeFound = None
+        for recipe in recipes:
+            if int(recipe['id'])==int(id):
+                recipeFound = recipe
+            
+        print(recipeFound)
+    return render_template('edit-recipe.html',recipe=recipeFound)
+
+@app.route('/editrecipe', methods=['POST'])
+def editrecipe():
+
+    editRecipe = {}
+    editRecipe.update({'title' : request.form['title']})
+    editRecipe.update({'description' : request.form['description']})
+    editRecipe.update({'imageURL' : request.form['imageURL']})
+    editRecipe.update({'id' : request.form['id']})
+
+    for value in editRecipe.values():
+	    print(value)
+    with open(app.root_path+'/templates/recipes.json') as f:
+        allRecipes = []
+        recipes = json.load(f)
+        for recipe in recipes:
+            if int(recipe['id'])==int(editRecipe['id']):
+                recipe = editRecipe
+            allRecipes.append(recipe)
+        with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
+            json.dump(allRecipes, jsonFile)
+    
+        return redirect("dashboard", code=303)
+
 if __name__ == '__main__':
     app.debug = True
     app.run() #go to http://localhost:5000/ to view the page.

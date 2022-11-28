@@ -11,7 +11,7 @@
 
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
-    <title>Fruit bowl - admin</title>
+    <title>Fruit bowl - Edit Recipe</title>
 
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
@@ -81,25 +81,20 @@
 
             <div class="col-sm">
 
-            <h1>Dashboard</h1>
-            <h2>Recipes</h2>  
-            <div id="recipes"></div>
-            <hr>
-            <div id="addRecipe">
-                <h2>Add Recipe</h2>
-                <form action="addrecipe" method="post">
+            <div id="editRecipe">
+                <h2>Edit Recipe</h2>
+                <form action="editrecipe" method="post">
                     <label for="">Title</label><br>
-                    <input type="text" name="title" id="title"><br>
+                    <input type="text" name="title" id="title" value="{{recipe.title}}"><br>
                     <label for="">Description</label><br>
-                    <textarea name="description"  id="description"></textarea><br>
+                    <textarea name="description"  id="description">{{recipe.description}}</textarea><br>
                     <label for="">Image URL</label><br>
-                    <input type="text" name="imageURL" id="imageURL"><br>
-                    <button >Add</button>  
+                    <input type="text" name="imageURL" id="imageURL" value="{{recipe.imageURL}}"><br>
+                    <input type="hidden" name="id" value="{{recipe.id}}"><br>
+                    <button >Edit</button>  
                 </form> 
             </div>  
         
-
-    
             </div>
 
         </div>
@@ -126,45 +121,8 @@
 
     </footer>
     <script>
-        jQuery.ajax({
-            'async': false,
-            'global': false,
-            'url': 'recipes.json',
-            'dataType': "json",
-            'success': function (recipes) {
-                //recipes = JSON.stringify(recipes)
-                //console.log(recipes)
-                let output = ``
-                recipes.forEach(recipe => {
-                    output +=`<div class='recipe'>
-                        <h4>${recipe['title']}</h4>
-                        <button onclick="deleteRecipe(${recipe['id']})">delete</button>
-                        <a href="edit-recipe.html?id=${recipe['id']}">edit</a>
-                        </div>`
-                });
-
-                $('#recipes').html(output)
-            }
-        });
-        function deleteRecipe(id){
-            $.ajax({
-                url: `/deleteRecipe.html?id=${id}`,
-                type: 'GET',
-                dataType: 'json' // added data type
-                
-            });
-            window.location.reload()
-        }
-        function editRecipe(id){
-            alert(`Loading the Recipe #${id} info`)
-        }
-        
- 
+       
     </script>
-
-    
 </body>
-
- 
 
 </html>
