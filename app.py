@@ -32,6 +32,11 @@ def signup():
 def recipesJSON():
     return render_template('recipes.json') 
 
+@app.route('/users.json')
+def usersJSON():
+    return render_template('users.json') 
+
+
 @app.route('/login', methods=['POST'])
 def dashboard():
    email = request.form['email']
@@ -102,6 +107,43 @@ def edit_recipe():
             
         print(recipeFound)
     return render_template('edit-recipe.html',recipe=recipeFound)
+
+@app.route('/signUp', methods=['POST'])
+def signUpSubmit():
+   email = request.form['email']
+   password = request.form['password']
+   firstname = request.form['firstname']
+   surname = request.form['surname']
+
+   if email == "":
+    return 'Please add a valid email address'
+     
+   if password == "":
+    return 'Please add a valid password'
+   
+   if firstname == "":
+    return 'Please add a valid First name'
+
+   if surname == "":
+    return 'Please add a valid Surname'
+  
+   newUser = {}
+   newUser.update({'firstname' : firstname})
+   newUser.update({'surname' : surname})
+   newUser.update({'email' : email})
+   newUser.update({'password' : password})
+   newUser.update({'id' : randint(0, 10000)})
+
+   with open(app.root_path+'/templates/users.json') as f:
+        allUsers = []
+        users = json.load(f)
+        for user in users:
+            users.append(user)
+        users.append(newUser)
+        with open(app.root_path+'/templates/users.json', "w") as jsonFile:
+         json.dump(allUsers, jsonFile)
+
+        return redirect("login", code=303)
 
 @app.route('/editrecipe', methods=['POST'])
 def editrecipe():

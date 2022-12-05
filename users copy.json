@@ -1,0 +1,8 @@
+[
+    {   "firstname": "rob",
+        "surname":"cutmore",
+        "email": "rob_cutmore@hotmail.com",
+        "password" : "password",
+        "admin": 1
+    }
+]
