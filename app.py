@@ -47,10 +47,14 @@ def dashboard():
      
    elif password == "":
     return 'Please add a valid password'
-   elif password !="james" or email!="rob_cutmore@hotmail.com":
-    return "Invalid account details"
-   else:
-    return render_template('dashboard.html')                       
+   with open(app.root_path+'/templates/users.json') as f:
+        users = json.load(f)
+        for user in users:
+            print(user)
+            if(user['email']==email and user['password']==password):
+                return render_template('dashboard.html')                       
+        
+        return "User not found."
 
 @app.route('/deleteRecipe.html')
 def delete_recipe():
@@ -110,11 +114,12 @@ def edit_recipe():
 
 @app.route('/signUp', methods=['POST'])
 def signUpSubmit():
+  
    email = request.form['email']
    password = request.form['password']
    firstname = request.form['firstname']
    surname = request.form['surname']
-
+   
    if email == "":
     return 'Please add a valid email address'
      
@@ -133,17 +138,20 @@ def signUpSubmit():
    newUser.update({'email' : email})
    newUser.update({'password' : password})
    newUser.update({'id' : randint(0, 10000)})
+   
 
    with open(app.root_path+'/templates/users.json') as f:
+       
         allUsers = []
         users = json.load(f)
         for user in users:
-            users.append(user)
-        users.append(newUser)
+            allUsers.append(user)
+        allUsers.append(newUser)
+        print(allUsers)
         with open(app.root_path+'/templates/users.json', "w") as jsonFile:
          json.dump(allUsers, jsonFile)
 
-        return redirect("login", code=303)
+        return "signup completed."
 
 @app.route('/editrecipe', methods=['POST'])
 def editrecipe():
