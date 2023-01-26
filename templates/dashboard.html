@@ -6,7 +6,10 @@
  
 
 <head>
-
+    <script>
+        let userid = {{user['id']}}
+        let admin = {{user['admin']}}
+    </script>
     <meta charset='utf-8'>
 
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -136,11 +139,14 @@
                 //console.log(recipes)
                 let output = ``
                 recipes.forEach(recipe => {
+                    
+                    if(admin || recipe['userid']==userid){
                     output +=`<div class='recipe'>
                         <h4>${recipe['title']}</h4>
                         <button onclick="deleteRecipe(${recipe['id']})">delete</button>
                         <a href="edit-recipe.html?id=${recipe['id']}">edit</a>
                         </div>`
+                    }
                 });
 
                 $('#recipes').html(output)

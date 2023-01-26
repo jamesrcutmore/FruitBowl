@@ -4,9 +4,12 @@ from flask import render_template
 from flask import request
 from flask import redirect
 from random import randint
+from flask import  session
+
 
 import json
 app = Flask(__name__)
+app.secret_key = 'BAD_SECRET_KEY'
 
 @app.route('/')
 def index():
@@ -52,7 +55,9 @@ def dashboard():
         for user in users:
             print(user)
             if(user['email']==email and user['password']==password):
-                return render_template('dashboard.html')                       
+                session['id'] = user['id']
+                session['admin'] = user['admin'] 
+                return render_template('dashboard.html',user = user)                       
         
         return "User not found."
 
@@ -119,6 +124,7 @@ def signUpSubmit():
    password = request.form['password']
    firstname = request.form['firstname']
    surname = request.form['surname']
+   admin = 0
    
    if email == "":
     return 'Please add a valid email address'
@@ -138,6 +144,7 @@ def signUpSubmit():
    newUser.update({'email' : email})
    newUser.update({'password' : password})
    newUser.update({'id' : randint(0, 10000)})
+   newUser.update({'admin' : admin})
    
 
    with open(app.root_path+'/templates/users.json') as f:
