@@ -100,7 +100,8 @@ def addrecipe():
     
 @app.route('/dashboard')
 def show_dashboard():
-    return render_template('dashboard.html')
+   user = {'id' : session['id'], 'admin':session['admin']}
+   return render_template('dashboard.html',user = user)
 
 @app.route('/edit-recipe.html')
 def edit_recipe():
@@ -168,6 +169,7 @@ def editrecipe():
     editRecipe.update({'description' : request.form['description']})
     editRecipe.update({'imageURL' : request.form['imageURL']})
     editRecipe.update({'id' : request.form['id']})
+    editRecipe.update({'userid' :1})
 
     for value in editRecipe.values():
 	    print(value)
