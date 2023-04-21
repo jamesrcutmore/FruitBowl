@@ -10,5 +10,12 @@ nav{
 
 .sign-up{
     width: 50%;
-    
+    justify-content: center;  
+}
+.sign-up h1{
+    font-weight: 500;
+    color: blue;
+    justify-content: center;
+    align-items: center;
+
 }
