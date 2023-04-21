@@ -19,3 +19,7 @@ nav{
     align-items: center;
 
 }
+.login-form{
+    width: 50%;
+    justify-content: center;
+}
