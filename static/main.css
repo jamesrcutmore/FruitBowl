@@ -19,7 +19,7 @@ nav{
     align-items: center;
 
 }
-.col-sm h1{
+.login col-6 offset-3 h1{
     width: 50%;
     justify-content: center;
     align-items: center;
