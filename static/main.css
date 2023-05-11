@@ -27,3 +27,11 @@ nav{
     min-height: 84vh;
     padding-top: 50px;
 }
+
+.col-sm {
+    max-width: 30rem;
+    text-align: center;
+    margin: 0 auto;
+    min-height: 84vh;
+    padding-top: 50px;
+}
