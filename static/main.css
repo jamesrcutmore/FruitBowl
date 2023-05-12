@@ -12,6 +12,7 @@ nav{
     max-width: 30rem;
     text-align: center;
     margin: 0 auto; 
+    min-height: 84vh;
 }
 .sign-up h1 {
     font-weight: 500;
@@ -28,10 +29,21 @@ nav{
     padding-top: 50px;
 }
 
-.col-sm {
+.hero-container {
+    background-image: url("https://cdn.pixabay.com/photo/2018/02/23/19/23/smoothies-3176371_960_720.jpg");
+    min-height: 84vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hero-section {
     max-width: 30rem;
     text-align: center;
-    margin: 0 auto;
-    min-height: 84vh;
-    padding-top: 50px;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+
 }
+
