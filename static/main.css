@@ -8,11 +8,16 @@ nav{
     max-width: 100%;
 }
 
+.signup-page {
+    background-image: url("https://cdn.pixabay.com/photo/2018/09/23/09/31/smoothie-3697014_1280.jpg");
+}
+
 .sign-up {
     max-width: 30rem;
     text-align: center;
     margin: 0 auto; 
     min-height: 84vh;
+    background-color: rgba(240, 248, 255, 0.5);
 }
 .sign-up h1 {
     font-weight: 500;
@@ -21,12 +26,17 @@ nav{
     align-items: center;
 }
 
+.login-page {
+  background-image: url("https://cdn.pixabay.com/photo/2018/09/23/09/31/smoothie-3697014_1280.jpg");
+}
+
  .login {
     max-width: 30rem;
     text-align: center;
     margin: 0 auto;
     min-height: 84vh;
     padding-top: 50px;
+    background-color: rgba(240, 248, 255, 0.5);
 }
 
 .hero-container {
