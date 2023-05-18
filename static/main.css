@@ -45,6 +45,8 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
 
@@ -55,5 +57,19 @@ nav{
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
 
+}
+
+.dashboard {
+    max-width: 30rem;
+    text-align: center;
+    margin: 0 auto; 
+    min-height: 84vh;
+    background-color: rgba(240, 248, 255, 0.5); 
+}
+
+.dashboard-page {
+    background-image: url("https://cdn.pixabay.com/photo/2018/09/23/09/31/smoothie-3697014_1280.jpg");
+
+    
 }
 
