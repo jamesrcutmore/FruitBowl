@@ -30,7 +30,7 @@
  
 
     <nav class="navbar navbar-expand-lg" style="background-color: forestgreen;">
-        <a class="navbar-brand" href="#">Fruitbowl</a>
+        <a class="navbar-brand" href="/">Fruitbowl</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -112,13 +112,16 @@
                 let output = ``
                 recipes.forEach(recipe => {
                     output +=`<div class='recipe'>
+                        <div class="recipe-details">
                         <h2>${recipe['title']}</h2>
                         <p>${recipe['description']}</p>
-                        <img src="${recipe['imageURL']}">
+                       
                         <h3>Ingredients</h3>
                         <ol>${createLi(recipe.ingredients)} </ol>
                         <h3>Methods</h3>
                         <ol>${createLi(recipe.method)} </ol>
+                        </div>
+                        <img src="${recipe['imageURL']}">
                         </div>`
                 });
 
