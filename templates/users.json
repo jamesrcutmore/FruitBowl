@@ -1,1 +1,26 @@
-[{"firstname": "rob", "surname": "cutmore", "email": "rob_cutmore@hotmail.com", "password": "password", "admin": 1,"id":1}, { "admin": 0,"firstname": "t", "surname": "t", "email": "t@t.uk", "password": "ttt", "id": 8212}, { "admin": 0,"firstname": "paul", "surname": "pop", "email": "paul@pop.uk", "password": "pop", "id": 1898}]
+[
+    {
+        "firstname": "rob",
+        "surname": "cutmore",
+        "email": "rob_cutmore@hotmail.com",
+        "password": "password",
+        "admin": 1,
+        "id": 1
+    },
+    {
+        "admin": 0,
+        "firstname": "t",
+        "surname": "t",
+        "email": "t@t.uk",
+        "password": "ttt",
+        "id": 8212
+    },
+    {
+        "admin": 0,
+        "firstname": "paul",
+        "surname": "pop",
+        "email": "paul@pop.uk",
+        "password": "pop",
+        "id": 1898
+    }
+]
