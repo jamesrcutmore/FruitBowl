@@ -48,7 +48,7 @@
                         <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="recipes.html">Recipes</a>
+                        <a class="nav-link" href="recipes">Recipes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.html">Log in</a>
@@ -68,6 +68,17 @@
             <div class="col-sm">
   
             <div id="recipes"></div>
+
+                {% for recipe in data.recipes %}
+                <div class='recipe'>
+                    <div class="recipe-details">
+                        <h2>{{recipe.title}}</h2>
+                        <p>{{recipe.description}}</p>
+                    </div>
+                    <img src="{{recipe.imageURL}}" />
+                </div>
+
+                {%endfor %}
 
     
             </div>
@@ -100,44 +111,6 @@
         <!-- Copyright -->
 
     </footer>
-
-    <script>
-        function createLi(items) {
-            let lis=''
-            items.forEach(i=> {
-                lis += `<li>${i}</li>`
-            })
-            return lis
-        }
-        jQuery.ajax({
-            'async': false,
-            'global': false,
-            'url': 'recipes.json',
-            'dataType': "json",
-            'success': function (recipes) {
-                //recipes = JSON.stringify(recipes)
-                //console.log(recipes)
-                let output = ``
-                recipes.forEach(recipe => {
-                    output +=`<div class='recipe'>
-                        <div class="recipe-details">
-                        <h2>${recipe['title']}</h2>
-                        <p>${recipe['description']}</p>
-                       
-                        <h3>Ingredients</h3>
-                        <ol>${createLi(recipe.ingredients)} </ol>
-                        <h3>Methods</h3>
-                        <ol>${createLi(recipe.method)} </ol>
-                        </div>
-                        <img src="${recipe['imageURL']}">
-                        </div>`
-                });
-
-                $('#recipes').html(output)
-            }
-        });
-    </script>
-
 </body>
 
  

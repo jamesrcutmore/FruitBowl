@@ -13,9 +13,8 @@ from bson.objectid import ObjectId
 import json
 app = Flask(__name__)
 app.secret_key = 'BAD_SECRET_KEY'
-app.config['MONGO_DBNAME'] = 'supersmoothie'
-app.config['MONGO_URI'] = os.getenv("MONGO_URI", "mongodb+srv://Smoothie:Sm00thieUser@cluster0.kuaea3o.mongodb.net/?retryWrites=true&w=majority")
-
+# app.config['MONGO_DBNAME'] = 'supersmoothie'
+app.config['MONGO_URI'] = os.getenv("MONGO_URI", "mongodb+srv://smoothie:sm00thieUser@cluster0.kuaea3o.mongodb.net/supersmoothie?retryWrites=true&w=majority")
 mongo = PyMongo(app)
 
 print('*******************')
@@ -29,10 +28,6 @@ def index():
 def home():
     return render_template('index.html')
 
-@app.route('/recipes.html')
-def recipes():
-    return render_template('recipes.html')                        
-
 @app.route('/login.html')
 def login():
     return render_template('login.html')                        
@@ -41,11 +36,10 @@ def login():
 def signup():
     return render_template('signup.html')  
 
-@app.route('/recipes.json')
-def recipesJSON():
-    recipes_data = mongo.recipes.find()
-    
-    return recipes_data
+@app.route('/recipes')
+def recipes():
+    recipes_data = mongo.db.recipes.find()
+    return render_template('recipes.html', data={'recipes': recipes_data})  
 
 @app.route('/users.json')
 def usersJSON():
