@@ -1,15 +1,25 @@
 #python -m flask run
-from flask import Flask
+import os
+from flask import Flask, url_for, jsonify
 from flask import render_template
 from flask import request
 from flask import redirect
 from random import randint
 from flask import  session
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 
 import json
 app = Flask(__name__)
 app.secret_key = 'BAD_SECRET_KEY'
+app.config['MONGO_DBNAME'] = 'supersmoothie'
+app.config['MONGO_URI'] = os.getenv("MONGO_URI", "mongodb+srv://Smoothie:Sm00thieUser@cluster0.kuaea3o.mongodb.net/?retryWrites=true&w=majority")
+
+mongo = PyMongo(app)
+
+print('*******************')
+print(mongo.db)
 
 @app.route('/')
 def index():
@@ -33,7 +43,9 @@ def signup():
 
 @app.route('/recipes.json')
 def recipesJSON():
-    return render_template('recipes.json') 
+    recipes_data = mongo.recipes.find()
+    
+    return recipes_data
 
 @app.route('/users.json')
 def usersJSON():
@@ -80,23 +92,26 @@ def delete_recipe():
       
 @app.route('/addrecipe', methods=['POST'])
 def addrecipe():
-    newRecipe = {}
-    newRecipe.update({'title' : request.form['title']})
-    newRecipe.update({'description' : request.form['description']})
-    newRecipe.update({'imageURL' : request.form['imageURL']})
-    newRecipe.update({'id' : randint(0, 10000)})
+    mongo.db.recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('recipes'))
+    # newRecipe = {}
+    # newRecipe.update({'title' : request.form['title']})
+    # newRecipe.update({'description' : request.form['description']})
+    # newRecipe.update({'imageURL' : request.form['imageURL']})
+    # newRecipe.update({'id' : randint(0, 10000)})
 
-    for value in newRecipe.values():
-	    print(value)
-    with open(app.root_path+'/templates/recipes.json') as f:
-        allRecipes = []
-        recipes = json.load(f)
-        for recipe in recipes:
-            allRecipes.append(recipe)
-        allRecipes.append(newRecipe)
-        with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
-            json.dump(allRecipes, jsonFile)
-        return redirect("dashboard", code=303)
+
+    # for value in newRecipe.values():
+	#     print(value)
+    # with open(app.root_path+'/templates/recipes.json') as f:
+    #     allRecipes = []
+    #     recipes = json.load(f)
+    #     for recipe in recipes:
+    #         allRecipes.append(recipe)
+    #     allRecipes.append(newRecipe)
+    #     with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
+    #         json.dump(allRecipes, jsonFile)
+    #     return redirect("dashboard", code=303)
     
 @app.route('/dashboard')
 def show_dashboard():
