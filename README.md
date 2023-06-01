@@ -3,7 +3,7 @@
 
 ![Am I Responsive image of quiz game](assets/images/Screenshot-smoothie.jpg)
 #                                      James cutmore Fruitbowl-2023-MS3
-A live website can be found [here](https://jamesrcutmore.github.io/Quiz-game1/)
+A live website can be found [here](https://jamesrcutmore-fruitbowl-z1qzsyiv3py.ws-eu98.gitpod.io/)
 
 ## **Table of Contents**
 
