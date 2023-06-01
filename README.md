@@ -1,9 +1,8 @@
 # FruitBowl
-#                                            **Science Quiz Game**
 #                      Interactive Front-End Development Project using HTML,CSS and Javascript
 
-![Am I Responsive image of quiz game](assets/screenshot-quiz.png)
-#                                      James cutmore Quiz-game1-2023-MS2
+![Am I Responsive image of quiz game](assets/images/Screenshot-smoothie.jpg)
+#                                      James cutmore Fruitbowl-2023-MS3
 A live website can be found [here](https://jamesrcutmore.github.io/Quiz-game1/)
 
 ## **Table of Contents**
