@@ -1,9 +1,8 @@
-# FruitBowl
-#                      Interactive Front-End Development Project using HTML,CSS and Javascript
+#                                        **CI-MS3-Fruitbowl** - Code Institute Milestone Project 3, Data-centric Module
 
 ![Am I Responsive image of quiz game](assets/images/Screenshot-smoothie.jpg)
-#                                      James cutmore Fruitbowl-2023-MS3
-A live website can be found [here](https://jamesrcutmore-fruitbowl-z1qzsyiv3py.ws-eu98.gitpod.io/)
+#                                      
+A live website can be found [here](https://5000-jamesrcutmore-fruitbowl-z1qzsyiv3py.ws-eu98.gitpod.io)
 
 ## **Table of Contents**
 
@@ -26,31 +25,38 @@ A live website can be found [here](https://jamesrcutmore-fruitbowl-z1qzsyiv3py.w
   * [Acknowledgements](#acknowledgements)
 
 # **About** 
-- Everyone loves a quiz?! The fun way to fill your spare time and keep you and your family entertained!
+-  Fruitbowl is a place for smoothies recipes.
 
-- This quiz in perticular is based on the scinece, how much do you really know? Take a little time complete the quiz, and you will find out!
+-  It is a platform for smoothies lovers to explore and share smoothies recipes with one another. 
+-  The users also have the the  option of holding an account, there they can add, edit and delete the their own recipes.
 
--  This Quiz is designed to include a wide range of randomised questions , all based on science , At the end , you will get 
-  the chance to save you score on the leadrboard and try again.. Have fun!
+- 
+
+-  
 
 # **User Experience**
-- As a user i want a vibrant,fun and a challenging quiz.
-- I want the user to experience ease of use.
-- I want to save my score.
-- As a user i want the game rules to be clear and easy to follow.
+As a general user:
+
+- I want to be able to see recipes without having to register an account.
+
+- I want to be able to search recipe with certain ingredients.
+
+- I want to search by specific categories, ie. detox, kids friendly, weight loss etc.
+
+- I want to be able to share my recipe with other people.
+
+- I want to have an account so I can come back, add, edit or delete my recipe.
 
 ### **Project Goals**
 
-- The primary goal of this project is to set up a quiz game or knowledge checker ,for the players that may become a brief    assessment to measure their science knowledge
-- The secondary goal is to help the user get their thinking mind on,improve short-term memory and sharpen their knowledge of general science.
+- The project goal is to provide a platform for users who love smoothies to explore new recipes and also add more recipes to 
+  share them with other users. As more and more users starting using the service, the website become a free resource.
 
 ### **Target Audience**
 
-- This quiz is aimed at any age bracket or audience.
+- The target audience are anyone who interested in healthy lifestyle and diet, who enjoys fruit and veg, or just simply 
+  exploring new tastes and experiences.
 
-- The quiz is aimed at anybody who likes to test there science knowledge.
-
-- The best way to promote our quiz game is through online advertisements and social media shares.
 
 # **User Stories**
 
