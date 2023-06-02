@@ -8,6 +8,7 @@ from random import randint
 from flask import  session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import bcrypt
 
 
 import json
@@ -17,8 +18,6 @@ app.secret_key = 'BAD_SECRET_KEY'
 app.config['MONGO_URI'] = os.getenv("MONGO_URI", "mongodb+srv://smoothie:sm00thieUser@cluster0.kuaea3o.mongodb.net/supersmoothie?retryWrites=true&w=majority")
 mongo = PyMongo(app)
 
-print('*******************')
-print(mongo.db)
 
 @app.route('/')
 def index():
@@ -30,10 +29,14 @@ def home():
 
 @app.route('/login.html')
 def login():
+    if 'email' in session:
+        return redirect(url_for('dashboard'))
     return render_template('login.html')                        
 
 @app.route('/signup.html')
 def signup():
+    if 'email' in session:
+        return redirect(url_for('dashboard'))
     return render_template('signup.html')  
 
 @app.route('/recipes')
@@ -129,46 +132,64 @@ def edit_recipe():
 
 @app.route('/signUp', methods=['POST'])
 def signUpSubmit():
-  
+   message = ''
+
+   surname = request.form['surname']
+   firstname = request.form['firstname']
    email = request.form['email']
    password = request.form['password']
-   firstname = request.form['firstname']
-   surname = request.form['surname']
+   cpassword = request.form['cpassword']
    admin = 0
-   
-   if email == "":
-    return 'Please add a valid email address'
+
+   user_found = mongo.db.users.find_one({'email': email})
+
+   if user_found:
+    message = 'A User with this email already exists'
+    return render_template('login.html', message=message)
+
+   if password != cpassword:
+        message = 'Password Not matching'
+        return render_template('login.html', message=message)
+   else:
+        hash = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+        new_user = {"firstname": firstname, "surname": surname, "email": email, "password": hash,"admin": admin}
+        mongo.db.users.insert_one(new_user)
+        user_data =  mongo.db.users.find_one({"email": email})
+        return redirect(url_for('dashboard'))
+#    if email == "":
+#     return 'Please add a valid email address'
      
-   if password == "":
-    return 'Please add a valid password'
+#    if password == "":
+#     return 'Please add a valid password'
    
-   if firstname == "":
-    return 'Please add a valid First name'
+#    if firstname == "":
+#     return 'Please add a valid First name'
 
-   if surname == "":
-    return 'Please add a valid Surname'
-  
-   newUser = {}
-   newUser.update({'firstname' : firstname})
-   newUser.update({'surname' : surname})
-   newUser.update({'email' : email})
-   newUser.update({'password' : password})
-   newUser.update({'id' : randint(0, 10000)})
-   newUser.update({'admin' : admin})
+#    if surname == "":
+#     return 'Please add a valid Surname'
+
+    
+#    newUser = {}
+#    newUser.update({'firstname' : firstname})
+#    newUser.update({'surname' : surname})
+#    newUser.update({'email' : email})
+#    newUser.update({'password' : password})
+#    newUser.update({'id' : randint(0, 10000)})
+#    newUser.update({'admin' : admin})
    
 
-   with open(app.root_path+'/templates/users.json') as f:
+#    with open(app.root_path+'/templates/users.json') as f:
        
-        allUsers = []
-        users = json.load(f)
-        for user in users:
-            allUsers.append(user)
-        allUsers.append(newUser)
-        print(allUsers)
-        with open(app.root_path+'/templates/users.json', "w") as jsonFile:
-         json.dump(allUsers, jsonFile)
+#         allUsers = []
+#         users = json.load(f)
+#         for user in users:
+#             allUsers.append(user)
+#         allUsers.append(newUser)
+#         print(allUsers)
+#         with open(app.root_path+'/templates/users.json', "w") as jsonFile:
+#          json.dump(allUsers, jsonFile)
 
-        return "signup completed."
+#         return "signup completed."
 
 @app.route('/editrecipe', methods=['POST'])
 def editrecipe():
