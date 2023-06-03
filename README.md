@@ -461,9 +461,3 @@ My wife Lyndsay cutmore support and help with testing and encouragement.
 
 Should you have any queries please reach me on rob_cutmore@hotmail.com
 
-Build a website ,that alows customers to log and share recipes.
-log in form
-sign up form
-add recipes..amend recipes??
-delete recipes ?
-webpage to display recipes/see recipes in details
