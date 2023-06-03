@@ -429,7 +429,7 @@ To copy a GitHub repository:-
 
 ### **Content**
 
-Throughout the process of doing this project I have done a lot from searching and investigating. All resources are referenced in the credits and the codes section below. 
+Throughout the process of doing this project I have done a lot from searching and investigating. All resources are referenced in the credits and the codes in the section below. 
 
  # Codes
 
