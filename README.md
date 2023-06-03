@@ -83,6 +83,7 @@ As a first time user:
 
 - I want to know if there is an option to register and hold an account, so I can come back anytime and add recipe if I like.
 - As a First Time Visitor, I want to know about the developer and their social media links.
+
 **_Returning User Goals_**
 
 As a returning user:
@@ -106,6 +107,18 @@ As a returning user:
 - I want to have access to the recipe I uploaded.
 
 - I want to be able to edit or delete my own recipe anytime if I want to.
+
+**_Site Owner/Admin Goals_**
+
+As the site owner/admin:
+
+- I want to be able to add new categories to the site.
+
+- I want the new category to be added and displayed as a certain way to go with the flow of the entire site.
+
+- I want to be able to edit the pre-existing categories.
+
+- I want to be able to delete any categories.
 
  
 # **Design**
