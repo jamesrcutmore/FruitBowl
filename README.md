@@ -61,45 +61,53 @@ As a general user:
 # **User Stories**
 
  **General User Goals**
- - I want to be able to easily navigate through the 
-   site easily
+ - I want to be able to see recipes without having to register an account.
 
- - I want to find quiz related activities, so that it 
-  broadens my knowledge and understanding.
+- I want to be able to search recipe with certain ingredients.
 
- - I want o be able to test my knowledge
+- I want to search by specific categories, ie. detox, kids friendly, weight loss etc.
 
- - I want to find a quiz, so that I can have fun and 
-   learn with.
+- I want to be able to share my recipe with other people.
 
-- As a Quizzer, I want to find interesting games, so 
-  that I can spend time, and enjoy enjoying playing them.
+- I want to have an account so I can come back, add, edit or delete my recipe.
 
-- As a learner , I want to learn through games, so 
-  that I can gain knowledge and idea's.
+**_First Time User Goals_**
 
-- As a person who likes to be challenged, I want to find a challenging Quiz, so that I can test myself.
+As a first time user:
 
-- As a Quiz competitor, I want to beat my last score ,when it is shown at the end.
+- I want to know what the website is about.
 
-- As a I-phone user, I want an app that is easy to use and is mobile friendly, so that I can use it on my mobile.
+- I want to explore around to get to know the place.
 
- # First Time Visitor Goals
-- As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about how to play the game.
+- I want to have a little taste about how the recipe looks like, is it something I am looking for.
 
-- As a First Time Visitor, I want to be able to easily navigate throughout the site to give the game a try,and easily return to the home page.
-
+- I want to know if there is an option to register and hold an account, so I can come back anytime and add recipe if I like.
 - As a First Time Visitor, I want to know about the developer and their social media links.
+**_Returning User Goals_**
 
- **Returning Visitor Goals**
+As a returning user:
 
-- As a Returning Visitor, I want to be able to save my score and  so i can progress.
+- I want to be able to log into my accout.
 
-- As a Returning Visitor, I want to see if i can beat 
-  my previous score.
+- I want to share my own recipe.
 
-- As a returning visitor i want to know that the site is easy to navigate,save my score and easily navigate through the site.
+- I want to add recipe to pre-determined categories.
 
+- I want to have access to the recipe I uploaded.
+
+- I want to be able to edit or delete my own recipe anytime if I want to.
+
+- I want to be able to log into my accout.
+
+- I want to share my own recipe.
+
+- I want to add recipe to pre-determined categories.
+
+- I want to have access to the recipe I uploaded.
+
+- I want to be able to edit or delete my own recipe anytime if I want to.
+
+ 
 # **Design**
 
 + **Colour Scheme** 
