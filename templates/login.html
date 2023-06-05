@@ -2,6 +2,12 @@
 {% block content %}
 
 <div class="login-page">
+  <!-- Error Messages -->
+  {% if message %}
+    <div class="alert alert-primary" role="alert">
+      <p>{{ message }}</p>
+    </div>
+  {% endif %}
   <div class="login">
     <div class="col-sm">
       <h1>Login</h1>
@@ -14,7 +20,7 @@
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <input type="password" id="form2Example2" placeholder="password" required class="input box"
+          <input type="password" id="form2Example2" required class="input box"
             class="form-control" name="password" />
         </div>
 

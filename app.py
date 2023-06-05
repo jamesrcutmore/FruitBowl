@@ -30,13 +30,13 @@ def home():
 @app.route('/login.html')
 def login():
     if 'email' in session:
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('show_dashboard'))
     return render_template('login.html')                        
 
 @app.route('/signup.html')
 def signup():
     if 'email' in session:
-        return redirect(url_for('dashboard'))
+        return redirect(url_for('show_dashboard'))
     return render_template('signup.html')  
 
 @app.route('/recipes')
@@ -51,24 +51,46 @@ def usersJSON():
 
 @app.route('/login', methods=['POST'])
 def dashboard():
+   if 'email' in session:
+        return redirect(url_for('show_dashboard'))
+
+   message = ''
+
    email = request.form['email']
    password = request.form['password']
 
-   if email == "":
-    return 'Please add a valid email address'
+   user_found = mongo.db.users.find_one({'email': email})
+
+   if user_found:
+    db_password =  user_found["password"]
+
+    if bcrypt.checkpw(password.encode('utf-8'), db_password):
+        session['admin'] = user_found['admin']
+        session['firstname'] = user_found['firstname']
+        session['email'] = user_found['email']
+
+        return redirect(url_for('show_dashboard'))
+    
+    else:
+        message = 'Invalid Password'
+        return render_template('login.html', message=message)
+
+   else:
+    message = ' User not Found'
+    return render_template('login.html',message = message)
      
-   elif password == "":
-    return 'Please add a valid password'
-   with open(app.root_path+'/templates/users.json') as f:
-        users = json.load(f)
-        for user in users:
-            print(user)
-            if(user['email']==email and user['password']==password):
-                session['id'] = user['id']
-                session['admin'] = user['admin'] 
-                return render_template('dashboard.html',user = user)                       
+#    elif password == "":
+#     return 'Please add a valid password'
+#    with open(app.root_path+'/templates/users.json') as f:
+#         users = json.load(f)
+#         for user in users:
+#             print(user)
+#             if(user['email']==email and user['password']==password):
+#                 session['id'] = user['id']
+#                 session['admin'] = user['admin'] 
+#                 return render_template('dashboard.html',user = user)                       
         
-        return "User not found."
+#         return "User not found."
 
 @app.route('/deleteRecipe.html')
 def delete_recipe():
@@ -112,7 +134,7 @@ def addrecipe():
     
 @app.route('/dashboard')
 def show_dashboard():
-   user = {'id' : session['id'], 'admin':session['admin']}
+   user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
    return render_template('dashboard.html',user = user)
 
 @app.route('/edit-recipe.html')
@@ -155,7 +177,12 @@ def signUpSubmit():
         new_user = {"firstname": firstname, "surname": surname, "email": email, "password": hash,"admin": admin}
         mongo.db.users.insert_one(new_user)
         user_data =  mongo.db.users.find_one({"email": email})
-        return redirect(url_for('dashboard'))
+
+        session['admin'] = user_data['admin']
+        session['firstname'] = user_data['firstname']
+        session['email'] = user_data['email']
+
+        return redirect(url_for('show_dashboard'))
 #    if email == "":
 #     return 'Please add a valid email address'
      
@@ -214,6 +241,17 @@ def editrecipe():
             json.dump(allRecipes, jsonFile)
     
         return redirect("dashboard", code=303)
+
+@app.route('/logout', methods=["POST", "GET"])
+def logout():
+    if 'email' in session:
+        session.pop('email', None)
+        session.pop('admin', None)
+        session.pop('firstname', None)
+        return redirect(url_for('index'))
+    else:
+        return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.debug = True
