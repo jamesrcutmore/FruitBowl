@@ -8,12 +8,14 @@
                 {% for recipe in data.recipes %}
                 <div class='recipe'>
                     <div class="recipe-details">
-                        <h2>{{recipe.title}}</h2>
+                        <h2> <a href="edit-recipe/{{recipe._id}}">{{recipe.title}}</a></h2>
                         <p>{{recipe.description}}</p>
 
                         <ul>
                             Ingredients
-                            <li>add trhis and ha ..</li>
+                            {%for ingredient in recipe.ingredients%}
+                                <li>{{ingredient}}</li>
+                            {%endfor %}
                         </ul>
                     </div>
                     <img src="{{recipe.imageURL}}" />

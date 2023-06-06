@@ -137,19 +137,22 @@ def show_dashboard():
    user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
    return render_template('dashboard.html',user = user)
 
-@app.route('/edit-recipe.html')
-def edit_recipe():
+@app.route('/edit-recipe/<id>')
+def edit_recipe(id):
    
-    id = request.args['id']
-    with open(app.root_path+'/templates/recipes.json') as f:
-        print(id)
-        recipes = json.load(f)
-        recipeFound = None
-        for recipe in recipes:
-            if int(recipe['id'])==int(id):
-                recipeFound = recipe
+    # id = request.args['id']
+    # with open(app.root_path+'/templates/recipes.json') as f:
+    #     print(id)
+    #     recipes = json.load(f)
+    #     recipeFound = None
+    #     for recipe in recipes:
+    #         if int(recipe['id'])==int(id):
+    #             recipeFound = recipe
             
-        print(recipeFound)
+    #     print(recipeFound)
+ 
+    recipeFound = mongo.db.recipes.find_one({"_id": ObjectId(id)})
+    print(recipeFound)
     return render_template('edit-recipe.html',recipe=recipeFound)
 
 @app.route('/signUp', methods=['POST'])
@@ -218,29 +221,31 @@ def signUpSubmit():
 
 #         return "signup completed."
 
-@app.route('/editrecipe', methods=['POST'])
-def editrecipe():
+@app.route('/editrecipe/<id>', methods=['POST'])
+def editrecipe(id):
+    newvalues = { "$set": { "title": request.form['title'],  'description' : request.form['description'], 'imageURL' : request.form['imageURL']} }
+    recipeFound = mongo.db.recipes.update_one({"_id": ObjectId(id)},newvalues)
+    return redirect('/recipes')
+    # editRecipe = {}
+    # editRecipe.update({'title' : request.form['title']})
+    # editRecipe.update({'description' : request.form['description']})
+    # editRecipe.update({'imageURL' : request.form['imageURL']})
+    # editRecipe.update({'id' : request.form['id']})
+    # editRecipe.update({'userid' :1})
 
-    editRecipe = {}
-    editRecipe.update({'title' : request.form['title']})
-    editRecipe.update({'description' : request.form['description']})
-    editRecipe.update({'imageURL' : request.form['imageURL']})
-    editRecipe.update({'id' : request.form['id']})
-    editRecipe.update({'userid' :1})
-
-    for value in editRecipe.values():
-	    print(value)
-    with open(app.root_path+'/templates/recipes.json') as f:
-        allRecipes = []
-        recipes = json.load(f)
-        for recipe in recipes:
-            if int(recipe['id'])==int(editRecipe['id']):
-                recipe = editRecipe
-            allRecipes.append(recipe)
-        with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
-            json.dump(allRecipes, jsonFile)
+    # for value in editRecipe.values():
+	#     print(value)
+    # with open(app.root_path+'/templates/recipes.json') as f:
+    #     allRecipes = []
+    #     recipes = json.load(f)
+    #     for recipe in recipes:
+    #         if int(recipe['id'])==int(editRecipe['id']):
+    #             recipe = editRecipe
+    #         allRecipes.append(recipe)
+    #     with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
+    #         json.dump(allRecipes, jsonFile)
     
-        return redirect("dashboard", code=303)
+    # return redirect("dashboard", code=303)
 
 @app.route('/logout', methods=["POST", "GET"])
 def logout():
