@@ -21,11 +21,13 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
+    # user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
     return render_template('index.html')
 
 @app.route('/index.html')
 def home():
-    return render_template('index.html')
+    # user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
+    return render_template('index.html' )
 
 @app.route('/login.html')
 def login():
@@ -41,8 +43,9 @@ def signup():
 
 @app.route('/recipes')
 def recipes():
+    user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
     recipes_data = mongo.db.recipes.find()
-    return render_template('recipes.html', data={'recipes': recipes_data})  
+    return render_template('recipes.html', data={'recipes': recipes_data}, user=user)  
 
 @app.route('/users.json')
 def usersJSON():
@@ -111,7 +114,10 @@ def delete_recipe():
       
 @app.route('/addrecipe', methods=['POST'])
 def addrecipe():
-    mongo.db.recipes.insert_one(request.form.to_dict())
+    user_email = session['email']
+    recipe_dict = request.form.to_dict()
+    recipe_dict['user_email'] = user_email
+    mongo.db.recipes.insert_one(recipe_dict)
     return redirect(url_for('recipes'))
     # newRecipe = {}
     # newRecipe.update({'title' : request.form['title']})
@@ -134,8 +140,11 @@ def addrecipe():
     
 @app.route('/dashboard')
 def show_dashboard():
-   user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
-   return render_template('dashboard.html',user = user)
+    if 'email' in session:
+        user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
+        return render_template('dashboard.html',user = user)
+    else:
+        return redirect(url_for('dashboard'))
 
 @app.route('/edit-recipe/<id>')
 def edit_recipe(id):
@@ -150,10 +159,18 @@ def edit_recipe(id):
     #             recipeFound = recipe
             
     #     print(recipeFound)
- 
-    recipeFound = mongo.db.recipes.find_one({"_id": ObjectId(id)})
-    print(recipeFound)
-    return render_template('edit-recipe.html',recipe=recipeFound)
+    if 'email' in session:
+        user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
+        recipeFound = mongo.db.recipes.find_one({"_id": ObjectId(id), 'user_email': user['email']})
+
+        if recipeFound:
+            return render_template('edit-recipe.html',recipe=recipeFound, user=user)
+        else:
+            return redirect(url_for('recipes'))
+            
+    else:
+        return redirect(url_for('dashboard'))
+
 
 @app.route('/signUp', methods=['POST'])
 def signUpSubmit():
@@ -253,6 +270,7 @@ def logout():
         session.pop('email', None)
         session.pop('admin', None)
         session.pop('firstname', None)
+        session.pop('user_id', None)
         return redirect(url_for('index'))
     else:
         return redirect(url_for('index'))
