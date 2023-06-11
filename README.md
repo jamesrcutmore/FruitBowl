@@ -30,9 +30,9 @@ A live website can be found [here](https://5000-jamesrcutmore-fruitbowl-z1qzsyiv
 -  It is a platform for smoothies lovers to explore and share smoothies recipes with one another. 
 -  The users also have the the  option of holding an account, there they can add, edit and delete the their own recipes.
 
-- 
+-  The user will be able to log in to there own recipes ,delete and edit,
 
--  
+-  Only the user can log into there own login.
 
 # **User Experience**
 As a general user:
@@ -40,8 +40,6 @@ As a general user:
 - I want to be able to see recipes without having to register an account.
 
 - I want to be able to search recipe with certain ingredients.
-
-- I want to search by specific categories, ie. detox, kids friendly, weight loss etc.
 
 - I want to be able to share my recipe with other people.
 
@@ -62,10 +60,6 @@ As a general user:
 
  **General User Goals**
  - I want to be able to see recipes without having to register an account.
-
-- I want to be able to search recipe with certain ingredients.
-
-- I want to search by specific categories, ie. detox, kids friendly, weight loss etc.
 
 - I want to be able to share my recipe with other people.
 
@@ -184,43 +178,39 @@ As the site owner/admin:
 
 # **Existing Features**
 
-- Homepage which entails navigation for game rule, mute button and leadrerboard. 
+- Homepage which entails a recipe page a login page which takes you to your recipes to edit etc and a sign up/in page which 
+  allows you to register. 
 
-- You press play then the music starts which can be muted.
+- You can press the home page link at any time fron any page.
 
-- you will have 60 seconds to answer all 20 questions.
+- You can login and edit and also add new recipes.
 
-- Multiple-choice section - gives the users four choices they can choose from.
+- You can register from the login page or go straight to sign up.
 
-- Once you've made all 20 choices a submit button should be pressed.
-
-- You will be presented with a pop up message to indicate you have saved your score.
-
-- once the game is finished it will shows the final score.
-
-- You are then giving the oppertunity to save your score to the leaderboard.
-
-- A play again button will then be presented.
+- social media links on footer.
 
 # **Features Left to Implement**
-+ A background image faded into background.
-  More thoght into the colour scheme.
-+ To have score's showing in decending order.
-+ To have a sound effect added to radio button's when question is answered.
++ To have more individual recipes catogories.
++ To have a better colour scheme.
++ To be able to search individual ingriedients.
++ To have added more content in general.
 ---
 
 # **Languages Used**
 - Javascript
 - H.T.M.L
 - C.S.S
+- Flask
+- Heruko
 
 # **Technologies Used**
 [Local strorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
  - Local storage was used to save score
 
-[The Trivia API](https://the-trivia-api.com/)
+[Flask](https://flask.palletsprojects.com/en/2.3.x//)
 
-- A trivia api was used to change question and keep the player interested.
+
+- A Python  Framework.
 
  [HTML5](https://en.wikipedia.org/wiki/HTML#:~:text=The%20HyperText%20Markup%20Language%2C%20or,displayed%20in%20a%20web%20browser.)
 
@@ -241,8 +231,9 @@ As the site owner/admin:
 
  # **Frameworks, Libraries & Programs Used**
 
-[API's](https://the-trivia-api.com/)
-The trivia API.com was used for randomized quiz questions
+[Flask](https://flask.palletsprojects.com/en/2.3.x//)
+
+A python framwork.
 
 [VScode](https://code.visualstudio.com/)
 
@@ -268,15 +259,15 @@ Insperation was gained from coolors pallete.
 
 [Balsamiq](https://balsamiq.com/)
 
-  The wireframes were created using Balsamiq.
+The wireframes were created using Balsamiq.
 
- [Google DevTools](https://developer.chrome.com/docs/devtools/)
+[Google DevTools](https://developer.chrome.com/docs/devtools/)
 
-   Google DevTools was extensively used throughout the project for various styling, testing and debugging purposes.
+ Google DevTools was extensively used throughout the project for various styling, testing and debugging purposes.
 
  [Am I Responsive](http://ami.responsivedesign.is/)
 
-   Am I responsive has been used to test the responsiveness of the site and also to create the mock-up image presented at the start of this document.
+ Am I responsive has been used to test the responsiveness of the site and also to create the mock-up image presented at the start of this document.
 
 [W3C Markup Validation service](https://validator.w3.org/)
 
