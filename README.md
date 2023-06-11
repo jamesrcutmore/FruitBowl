@@ -293,36 +293,28 @@ The wireframes were created using Balsamiq.
 + Tested each page individually on mobile and made sure hover over isn't applied.
 ### Home Button
 + Home buttton tested and working correctley.
-### Play Again
-+ Play again button tested and worked as expected. 
-### Mute Button
-+ Changed the mute button to on/off several times in one game to check for any issues, checking for both right and wrong answers. 
-### Questions
-+ Played several games to make sure that all questions were populating correctly. 
-+ ### Quiz API
-+ Started quiz several times to make sur api question where loading and functioning correctly.
-### Answer Buttons
-+ checked several games to make sure that all answers were populating correctly inside their buttons. 
-+ Checked several games to make sure that all answers were populating for the correct question.
-+ Made sure pop up appears if you do not select a question before you submit. 
+### Recipe button
++ Recipe button tested and worked as expected. 
+### Login Button
++ Login button tested and works correctly 
+### Sign up Button
++ Sign up button works as exspected. 
+### Sign up form
++ Sign up form performs as exspected. 
+### Register clickable link Button
++ Register button/link works as exspected.
+### Add Recipe
++ Add recipe works and adds as exspected. 
+### Fruitbowl link Navigation bar
++ Fruitbowl link on nav bar takes you back to home page as exspected.
+### Home link
++ Takes you back to home page when on other pages, works as exspected. 
  
-### Main Game Display 
-+ Made sure that if the answer is chosen, the score increments. 
-+ Made sure that if the wrong answer is chosen, the score doesn't increment. 
-+ Made sure that, regardless of right or wrong answer being chosen, the question number increments. 
-### Submit Score
-+ Added name to input field and submitted to check submit was working. 
-### Saved Scores
-+ Checked to make sure name and score were  saving in the local storage correctly.
-+ Made sure that correct name and score were being added.   
-+ Shut down device and restarted to make ensure that scores were being saved in local storage. 
-### Timer
-+ Timer works as exspected no issues.
-+ Timer stops when Answers are answered before time is up.
-+ Time's up message displayed when 60 seconds up.
-### Questions Answered
-+ You must answer a question before moving onto next.
-+ Submit button will activate a message "Please answer Question".
+### Social media links 
++ All social media links work as exspected. 
+
+### Log out
++ Log in button works as exspected.
 
 
 | Feature | Expected Outcome | Testing Performed |  Actual Result | Outcome |
