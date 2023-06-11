@@ -124,7 +124,7 @@ As the site owner/admin:
 - Bright  primary colours so to make it easy and fun to navigate.
 
 
-![Coloors Pallete](assets/quizgamepalette.jpg)
+![Coloors Pallete](assets/images/fruitbowl-colours.jpg)
 
   
 + **Typography**
