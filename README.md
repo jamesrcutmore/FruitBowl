@@ -150,23 +150,23 @@ As the site owner/admin:
 
 - The site is easy to navigate functional and responsive
 
-![sitemap](assets/smoothie-sitemap.jpg)
+![sitemap](assets/images/smoothie-sitemap.jpg)
    
  # **Wireframe views**
 
-![Desktop wireframe](assets/smoothie-desktophome.jpg)
-![Desktop wireframe](assets/smoothie-desktoprecipe.jpg)
-![Desktop wireframe](assets/smoothie-desktoplogin.jpg)
-![Desktop wireframe](assets/smoothie-desktopsignin.jpg)
+![Desktop wireframe](assets/images/smoothie-desktophome.jpg)
+![Desktop wireframe](assets/images/smoothie-desktoprecipe.jpg)
+![Desktop wireframe](assets/images/smoothie-desktoplogin.jpg)
+![Desktop wireframe](assets/images/smoothie-desktopsignin.jpg)
 
 ---
 
 # **Wireframe Tablet view**
 
-![Tablet wireframe](assets/smoothie-tablethome.jpg)
-![Tablet wireframe](assets/smoothie-tabletrecipe.jpg)
-![Tablet wireframe](assets/smoothie-tabletlogin.jpg)
-![Tablet wireframe](assets/smoothie-tabletsignup.jpg)
+![Tablet wireframe](assets/images/smoothie-tablethome.jpg)
+![Tablet wireframe](assets/images/smoothie-tabletrecipe.jpg)
+![Tablet wireframe](assets/images/smoothie-tabletlogin.jpg)
+![Tablet wireframe](assets/images/smoothie-tabletsignup.jpg)
 
 ---
 
