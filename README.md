@@ -154,26 +154,29 @@ As the site owner/admin:
    
  # **Wireframe views**
 
-![Desktop wireframe](assets/ms2quizgamedesktop.jpg)
-![Desktop wireframe](assets/ms2quizgamedesktop2.jpg)
-![Desktop wireframe](assets/ms2quizgamedesktop3.jpg)
+![Desktop wireframe](assets/smoothie-desktophome.jpg)
+![Desktop wireframe](assets/smoothie-desktoprecipe.jpg)
+![Desktop wireframe](assets/smoothie-desktoplogin.jpg)
+![Desktop wireframe](assets/smoothie-desktopsignin.jpg)
 
 ---
 
 # **Wireframe Tablet view**
 
-![Tablet wireframe](assets/ms2quizgametablet.jpg)
-![Tablet wireframe](assets/ms2quizgametablet2.jpg)
-![Tablet wireframe](assets/ms2quizgametablet3.jpg)
+![Tablet wireframe](assets/smoothie-tablethome.jpg)
+![Tablet wireframe](assets/smoothie-tabletrecipe.jpg)
+![Tablet wireframe](assets/smoothie-tabletlogin.jpg)
+![Tablet wireframe](assets/smoothie-tabletsignup.jpg)
 
 ---
 
 # **Wireframe Mobile view**
 
 
-![mobile wireframe](assets/ms2quizgamemobile.jpg)
-![mobile wireframe](assets/ms2quizgamemobile2.jpg)
-![mobile wireframe](assets/ms2quizgamemobile3.jpg)
+![mobile wireframe](assets/smoothie-mobilehome.jpg)
+![mobile wireframe](assets/smoothie-mobilerecipe.jpg)
+![mobile wireframe](assets/smoothie-mobilelogin.jpg)
+![mobile wireframe](assets/smoothie-mobilesignup.jpg)
 ---
 ---
 
