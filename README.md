@@ -150,7 +150,7 @@ As the site owner/admin:
 
 - The site is easy to navigate functional and responsive
 
-![sitemap](assets/sitemap.jpg)
+![sitemap](assets/smoothie-sitemap.jpg)
    
  # **Wireframe views**
 
