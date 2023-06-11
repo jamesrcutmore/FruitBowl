@@ -173,10 +173,10 @@ As the site owner/admin:
 # **Wireframe Mobile view**
 
 
-![mobile wireframe](assets/smoothie-mobilehome.jpg)
-![mobile wireframe](assets/smoothie-mobilerecipe.jpg)
-![mobile wireframe](assets/smoothie-mobilelogin.jpg)
-![mobile wireframe](assets/smoothie-mobilesignup.jpg)
+![mobile wireframe](assets/images/smoothie-mobilehome.jpg)
+![mobile wireframe](assets/images/smoothie-mobilerecipe.jpg)
+![mobile wireframe](assets/images/smoothie-mobilelogin.jpg)
+![mobile wireframe](assets/images/smoothie-mobilesignup.jpg)
 ---
 ---
 
