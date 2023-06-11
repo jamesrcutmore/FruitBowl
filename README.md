@@ -133,7 +133,10 @@ As the site owner/admin:
   [Google Fonts](https://fonts.google.com/)
 
 + **Imagery**
-  The imagery for the quiz game is simple colouful and pleasing on the eye. The navigation buttons are bright primary colour's with 3D effect movement with the hover over.
+ 
+  The imagery for the quiz game is simple colouful and pleasing on the eye. The navigation buttons are bright primary 
+  colour's with 3D effect movement with the hover over.
+  
 - [Pixabay](https://pixabay.com/)
 
 - [google images](https://www.google.com/imghp?hl=en/)
