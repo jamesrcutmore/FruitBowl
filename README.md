@@ -348,7 +348,7 @@ The wireframes were created using Balsamiq.
 # Automatic testing
 
 ### Validation
-+ W3C Validation was used:
+ - W3C Validation was used:
  - HTML
  - CSS
  - JS Hint was used to validate javascript.
