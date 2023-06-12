@@ -18,7 +18,7 @@ app.secret_key = 'BAD_SECRET_KEY'
 app.config['MONGO_URI'] = os.getenv("MONGO_URI", "mongodb+srv://smoothie:sm00thieUser@cluster0.kuaea3o.mongodb.net/supersmoothie?retryWrites=true&w=majority")
 mongo = PyMongo(app)
 
-
+# if a user is in session, use this as the user
 @app.route('/')
 def index():
     # user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
