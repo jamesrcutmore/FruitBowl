@@ -202,6 +202,7 @@ As the site owner/admin:
 ---
 
 # **Languages Used**
+- python
 - Javascript
 - H.T.M.L
 - C.S.S
@@ -212,6 +213,9 @@ As the site owner/admin:
 # **Technologies Used**
 [Local strorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
  - Local storage was used to save score
+
+[Python](https://www.python.org/)
+- Python language
 
 [Flask](https://flask.palletsprojects.com/en/2.3.x//)
 
@@ -324,23 +328,20 @@ The wireframes were created using Balsamiq.
 
 | Feature | Expected Outcome | Testing Performed |  Actual Result | Outcome |
 | --- | --- | --- | --- | --- |
-| The Sites title | Link directs the user back to the home page | Clicked title |  page reloads | Pass |
-| Game rules button | Displays the instructions on how to play the game | Clicked on button |  instructions on how to play opens | Pass |
-|close button | Closes the message box | Clicked on close button | boxclosed | Pass |
-|Radio  button | Answers a question | Clicked button | Question answers | Pass |
-| Play Button | Takes you to play the game | Clicked on button | Game page opens to questions | Pass |
-| Please Answer Question on submit if nothing answered message | Message pop's up | Message popped up when no questions answered  | Pass |
-| Audio loop | When play button is clicked music loop will start | Clicked on button | Music plays | Pass |
-| Timer  | When play button is clicked 60 seconds is displayed on timer | Clicked Play | Timer Starts | Pass |
-| Save Scores input Button | Asks for you to save your score | Clicked on button | Name inputed | Pass |
+| The Fruitbowl title | Link directs the user back to the home page | Clicked title |  page reloads | Pass |
+|  Recipe nav link | Clicked on button | Takes you to the recipes | Pass |
+|Login button  | Clicked on  button | Login opens | Pass |
+|Sign up button |  | Clicked button | sign up form opens | Pass |
+|Register button | Takes you to sign up/ register form | Clicked on button | Form opens | Pass |
+|Edit Recipe | edit form opens | works correctley | Pass |
+|Home button |clicked on button | Clicked on button | redirects to home from other pages | Pass |
+| Sign up (submit button) | clicked button |works correctley  | Pass |
+|Facebook link in footer  | Clicked on button | Takes you to face book| Pass |
+|Twitter link in footer  | Clicked on button | Takes you to Twitter| Pass |
+|Instagram link in footer  | Clicked on button | Takes you to Instagram| Pass |
 | All buttons - hover effect | All buttons have hovered over with movement. | Hover over each button on the page |button movenment correctly performing  when hovered over | Pass |
-|  Cursor pointer| cursor displayed when moved over buttons |  mouse  positionedover each button to check the cursor changed  | cursor changed when hoverd | Pass |
-| Mute Button | Gives player the choice to have music or not | Clicked on button | muted impliment | Pass |
-| unmute Button | Gives player the choice to have music unmuted | Clicked on button | unmuted impliment | Pass |
-|Facebook social media link| Click link should take you directley to the site| Clicked link| straight to link as exspected | pass|
-|Twitter social media link| Click link should take you directley to the site| Clicked link| straight to link as exspected | pass|
-|Instagram social media link| Click link should take you directley to the site| Clicked link| straight to link as exspected | pass|
-|Pintrest social media link| Click link should take you directley to the site| Clicked link| straight to link as exspected | pass|
+|  Cursor pointer| cursor displayed when moved over buttons | mouse positioned over each button to check the cursor changed  | cursor changed when hoverd | Pass |
+
 ---
 # Automatic testing
 
@@ -393,6 +394,20 @@ The wireframes were created using Balsamiq.
  ![Mobile perfomance game rules](assets/lighthousemobile-gamerules.jpg)
 
  ## Deployment & Local Development
+
+ ## **Deployment**
+
+### **Heroku Deployment**
+
+I deployed this project to heroku using the following steps:
+
+#### **Create Flask Application**
+
+- Log into Heruko
+- Under dashboard, Select "Create New App"
+- Choose an app name (it shows in red if the name is already taken)
+- select a region base on your location
+- click "Create app"
 
 ### Deploying to Github Pages
 
