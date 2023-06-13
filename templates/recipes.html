@@ -17,6 +17,13 @@
                                 <li>{{ingredient}}</li>
                             {%endfor %}
                         </ul>
+                    
+                        <h3>Methods</h3>
+                        <ol>
+                            {%for method in recipe.method%}
+                                <li>{{method}}</li>
+                            {%endfor %}
+                        </ol>
                     </div>
                     <img src="{{recipe.imageURL}}" />
                 </div>
