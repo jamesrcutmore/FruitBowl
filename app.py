@@ -43,9 +43,8 @@ def signup():
 
 @app.route('/recipes')
 def recipes():
-    user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
     recipes_data = mongo.db.recipes.find()
-    return render_template('recipes.html', data={'recipes': recipes_data}, user=user)  
+    return render_template('recipes.html', data={'recipes': recipes_data})  
 
 @app.route('/users.json')
 def usersJSON():
