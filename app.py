@@ -14,19 +14,17 @@ import bcrypt
 import json
 app = Flask(__name__)
 app.secret_key = 'BAD_SECRET_KEY'
-# app.config['MONGO_DBNAME'] = 'supersmoothie'
 app.config['MONGO_URI'] = os.getenv("MONGO_URI", "mongodb+srv://smoothie:sm00thieUser@cluster0.kuaea3o.mongodb.net/supersmoothie?retryWrites=true&w=majority")
 mongo = PyMongo(app)
 
-# if a user is in session, use this as the user
 @app.route('/')
 def index():
-    # user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
+    
     return render_template('index.html')
 
 @app.route('/index.html')
 def home():
-    # user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
+   
     return render_template('index.html' )
 
 @app.route('/login.html')
@@ -81,18 +79,7 @@ def dashboard():
     message = ' User not Found'
     return render_template('login.html',message = message)
      
-#    elif password == "":
-#     return 'Please add a valid password'
-#    with open(app.root_path+'/templates/users.json') as f:
-#         users = json.load(f)
-#         for user in users:
-#             print(user)
-#             if(user['email']==email and user['password']==password):
-#                 session['id'] = user['id']
-#                 session['admin'] = user['admin'] 
-#                 return render_template('dashboard.html',user = user)                       
-        
-#         return "User not found."
+
 
 @app.route('/deleteRecipe.html')
 def delete_recipe():
@@ -106,7 +93,7 @@ def delete_recipe():
             if int(recipe['id'])!=int(id):
                 print(recipe['id'])
                 newReceipes.append(recipe)
-                #app.logger.info('testing info log')
+               
         with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
             json.dump(newReceipes, jsonFile)
     return "recipes deleted"
@@ -120,24 +107,7 @@ def addrecipe():
     recipe_dict['method'] = request.form.get("method").split(',')
     mongo.db.recipes.insert_one(recipe_dict)
     return redirect(url_for('recipes'))
-    # newRecipe = {}
-    # newRecipe.update({'title' : request.form['title']})
-    # newRecipe.update({'description' : request.form['description']})
-    # newRecipe.update({'imageURL' : request.form['imageURL']})
-    # newRecipe.update({'id' : randint(0, 10000)})
-
-
-    # for value in newRecipe.values():
-	#     print(value)
-    # with open(app.root_path+'/templates/recipes.json') as f:
-    #     allRecipes = []
-    #     recipes = json.load(f)
-    #     for recipe in recipes:
-    #         allRecipes.append(recipe)
-    #     allRecipes.append(newRecipe)
-    #     with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
-    #         json.dump(allRecipes, jsonFile)
-    #     return redirect("dashboard", code=303)
+    
     
 @app.route('/dashboard')
 def show_dashboard():
@@ -150,16 +120,7 @@ def show_dashboard():
 @app.route('/edit-recipe/<id>')
 def edit_recipe(id):
    
-    # id = request.args['id']
-    # with open(app.root_path+'/templates/recipes.json') as f:
-    #     print(id)
-    #     recipes = json.load(f)
-    #     recipeFound = None
-    #     for recipe in recipes:
-    #         if int(recipe['id'])==int(id):
-    #             recipeFound = recipe
-            
-    #     print(recipeFound)
+    
     if 'email' in session:
         user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
         recipeFound = mongo.db.recipes.find_one({"_id": ObjectId(id), 'user_email': user['email']})
@@ -204,40 +165,10 @@ def signUpSubmit():
         session['email'] = user_data['email']
 
         return redirect(url_for('show_dashboard'))
-#    if email == "":
-#     return 'Please add a valid email address'
-     
-#    if password == "":
-#     return 'Please add a valid password'
-   
-#    if firstname == "":
-#     return 'Please add a valid First name'
 
-#    if surname == "":
-#     return 'Please add a valid Surname'
-
-    
-#    newUser = {}
-#    newUser.update({'firstname' : firstname})
-#    newUser.update({'surname' : surname})
-#    newUser.update({'email' : email})
-#    newUser.update({'password' : password})
-#    newUser.update({'id' : randint(0, 10000)})
-#    newUser.update({'admin' : admin})
    
 
-#    with open(app.root_path+'/templates/users.json') as f:
-       
-#         allUsers = []
-#         users = json.load(f)
-#         for user in users:
-#             allUsers.append(user)
-#         allUsers.append(newUser)
-#         print(allUsers)
-#         with open(app.root_path+'/templates/users.json', "w") as jsonFile:
-#          json.dump(allUsers, jsonFile)
 
-#         return "signup completed."
 
 @app.route('/editrecipe/<id>', methods=['POST'])
 def editrecipe(id):
@@ -246,26 +177,9 @@ def editrecipe(id):
     'method': request.form.get("method").split(',') }}
     recipeFound = mongo.db.recipes.update_one({"_id": ObjectId(id)}, newvalues)
     return redirect('/recipes')
-    # editRecipe = {}
-    # editRecipe.update({'title' : request.form['title']})
-    # editRecipe.update({'description' : request.form['description']})
-    # editRecipe.update({'imageURL' : request.form['imageURL']})
-    # editRecipe.update({'id' : request.form['id']})
-    # editRecipe.update({'userid' :1})
-
-    # for value in editRecipe.values():
-	#     print(value)
-    # with open(app.root_path+'/templates/recipes.json') as f:
-    #     allRecipes = []
-    #     recipes = json.load(f)
-    #     for recipe in recipes:
-    #         if int(recipe['id'])==int(editRecipe['id']):
-    #             recipe = editRecipe
-    #         allRecipes.append(recipe)
-    #     with open(app.root_path+'/templates/recipes.json', "w") as jsonFile:
-    #         json.dump(allRecipes, jsonFile)
+   
+	
     
-    # return redirect("dashboard", code=303)
 
 @app.route('/logout', methods=["POST", "GET"])
 def logout():
