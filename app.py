@@ -10,6 +10,8 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
 
+if os.path.exists("env.py"):
+    import env
 
 import json
 app = Flask(__name__)
