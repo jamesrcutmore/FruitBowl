@@ -15,10 +15,12 @@ if os.path.exists("env.py"):
 
 import json
 app = Flask(__name__)
-app.secret_key = 'BAD_SECRET_KEY'
-app.config['MONGO_URI'] = os.getenv("MONGO_URI", "mongodb+srv://smoothie:sm00thieUser@cluster0.kuaea3o.mongodb.net/supersmoothie?retryWrites=true&w=majority")
-mongo = PyMongo(app)
 
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
+
+mongo = PyMongo(app)
 @app.route('/')
 def index():
     
