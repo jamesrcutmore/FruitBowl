@@ -11,6 +11,10 @@
                     <input type="text" name="title" id="title" value="{{recipe.title}}"><br>
                     <label for="">Description</label><br>
                     <textarea name="description"  id="description">{{recipe.description}}</textarea><br>
+                    <label for="">Ingredients (comma separated)</label><br>
+                    <textarea name="ingredients" id="ingredients">{{recipe.ingredients|join(',')}}</textarea><br>
+                    <label for="">Method (comma separated)</label><br>
+                    <textarea name="method" id="method">{{recipe.method|join(',')}}</textarea><br>
                     <label for="">Image URL</label><br>
                     <input type="text" name="imageURL" id="imageURL" value="{{recipe.imageURL}}"><br>
                     <input type="hidden" name="id" value="{{recipe.id}}"><br>

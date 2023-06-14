@@ -116,6 +116,8 @@ def addrecipe():
     user_email = session['email']
     recipe_dict = request.form.to_dict()
     recipe_dict['user_email'] = user_email
+    recipe_dict['ingredients'] = request.form.get("ingredients").split(',')
+    recipe_dict['method'] = request.form.get("method").split(',')
     mongo.db.recipes.insert_one(recipe_dict)
     return redirect(url_for('recipes'))
     # newRecipe = {}
@@ -239,8 +241,10 @@ def signUpSubmit():
 
 @app.route('/editrecipe/<id>', methods=['POST'])
 def editrecipe(id):
-    newvalues = { "$set": { "title": request.form['title'],  'description' : request.form['description'], 'imageURL' : request.form['imageURL']} }
-    recipeFound = mongo.db.recipes.update_one({"_id": ObjectId(id)},newvalues)
+    newvalues = { "$set": { "title": request.form['title'],  'description' : request.form['description'], 'imageURL' : request.form['imageURL'],
+    'ingredients':request.form.get("ingredients").split(','),
+    'method': request.form.get("method").split(',') }}
+    recipeFound = mongo.db.recipes.update_one({"_id": ObjectId(id)}, newvalues)
     return redirect('/recipes')
     # editRecipe = {}
     # editRecipe.update({'title' : request.form['title']})

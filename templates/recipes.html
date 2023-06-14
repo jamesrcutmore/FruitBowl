@@ -10,9 +10,8 @@
                     <div class="recipe-details">
                         <h2> <a href="edit-recipe/{{recipe._id}}">{{recipe.title}}</a></h2>
                         <p>{{recipe.description}}</p>
-
+                        <h3>Ingredients</h3>
                         <ul>
-                            Ingredients
                             {%for ingredient in recipe.ingredients%}
                                 <li>{{ingredient}}</li>
                             {%endfor %}
