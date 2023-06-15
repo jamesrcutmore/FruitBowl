@@ -16,13 +16,13 @@ if os.path.exists("env.py"):
 import json
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
         
-print(mongo)
+print(mongo.db)
 
 @app.route('/')
 def index():
@@ -201,5 +201,5 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.debug = True
+    app.debug = False
     app.run() #go to http://localhost:5000/ to view the page.
