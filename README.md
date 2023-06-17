@@ -2,7 +2,7 @@
 
 ![Am I Responsive image of quiz game](assets/images/Screenshot-smoothie.jpg)
 #                                      
-A live website can be found [here](https://5000-jamesrcutmore-fruitbowl-z1qzsyiv3py.ws-eu98.gitpod.io)
+A live website can be found [here](https://https://jamesrcutmore-fruitbowl-z1qzsyiv3py.ws-eu100.gitpod.io/)
 
 ## **Table of Contents**
 
