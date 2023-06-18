@@ -26,13 +26,16 @@ print(mongo.db)
 
 @app.route('/')
 def index():
-    
-    return render_template('index.html')
+    if 'email' in session:
+        user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
+        return render_template('index.html', user = user)
+    else:
+        return render_template('index.html')
 
-@app.route('/index.html')
-def home():
+# @app.route('/index.html')
+# def home():
    
-    return render_template('index.html' )
+#     return render_template('index.html' )
 
 @app.route('/login.html')
 def login():
@@ -49,7 +52,12 @@ def signup():
 @app.route('/recipes')
 def recipes():
     recipes_data = mongo.db.recipes.find()
-    return render_template('recipes.html', data={'recipes': recipes_data})  
+    if 'email' in session:
+        user = {'email' : session['email'], 'admin':session['admin'],'firstname':session['firstname']}
+        return render_template('recipes.html', data={'recipes': recipes_data},user = user)
+    else:
+      return render_template('recipes.html', data={'recipes': recipes_data})    
+      
 
 @app.route('/users.json')
 def usersJSON():
