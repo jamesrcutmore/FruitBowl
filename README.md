@@ -384,14 +384,18 @@ The wireframes were created using Balsamiq.
  ![Desktop perfomance questions page](assets/lighthousedesktop-questionspage.jpg)
 + # Desktop Qeustions page Score
  ![Desktop perfomance questions page score](assets/lighthousedesktop-questionspagescore.jpg)
-+ ## Mobile view Home screen
++ # Mobile view Home screen
  ![Mobile perfomance Home](assets/smoothie-homelh.jpg)
  + # Mobile view Recipes  Page
  ![Mobile perfomance leadreboard score](assets/smoothie-recipeslh.jpg)
- + # Mobile view Questions page Score
- ![Mobile perfomance questions score](assets/lighthousemobile-questionspage.jpg)
- + # Mobile view Games Rules page
- ![Mobile perfomance game rules](assets/lighthousemobile-gamerules.jpg)
+ + # Mobile view login page
+ ![Mobile perfomance questions score](assets/smoothie-loginlh.jpg)
+ + # Mobile view Dashboard  page
+ ![Mobile perfomance game rules](assets/smoothie-dashboardlh.jpg)
+ + # Mobile view Signup page
+ ![Mobile perfomance game rules](assets/smoothie-signuplh.jpg)
+ + # Mobile view Edit page
+ ![Mobile perfomance game rules](assets/smoothie-editlh.jpg)
 
  ## Deployment & Local Development
 
