@@ -387,15 +387,15 @@ The wireframes were created using Balsamiq.
 + # Mobile view Home screen
  ![Mobile perfomance Home](assets/smoothie-homelh.jpg)
  + # Mobile view Recipes  Page
- ![Mobile perfomance leadreboard score](assets/smoothie-recipeslh.jpg)
+ ![Mobile perfomance recipes page](assets/smoothie-recipeslh.jpg)
  + # Mobile view login page
- ![Mobile perfomance questions score](assets/smoothie-loginlh.jpg)
+ ![Mobile perfomance login page](assets/smoothie-loginlh.jpg)
  + # Mobile view Dashboard  page
  ![Mobile perfomance game rules](assets/smoothie-dashboardlh.jpg)
  + # Mobile view Signup page
- ![Mobile perfomance game rules](assets/smoothie-signuplh.jpg)
+ ![Mobile perfomance signup](assets/smoothie-signuplh.jpg)
  + # Mobile view Edit page
- ![Mobile perfomance game rules](assets/smoothie-editlh.jpg)
+ ![Mobile perfomance edit page](assets/smoothie-editlh.jpg)
 
  ## Deployment & Local Development
 
