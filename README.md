@@ -369,33 +369,23 @@ The wireframes were created using Balsamiq.
 # Lighthouse performance
 
 + ## Desktop Home screen
- ![Desktop lighthouse performance](assets/lighthousedesktop-home.jpg)
-+ # Desktop Home screen score
- ![Desktop perfomance score](assets/lighthousedesktop-homeperformance.jpg)
-+ # Desktop Game Rules
- ![Desktop perfomance Game Rules](assets/lighthousedesktop-gamerulespage.jpg)
-+ # Desktop Game  Rule score
- ![Desktop perfomance score](assets/lighthousedesktop-gamerulespagescore.jpg)
-+ # Desktop Leaderboard
- ![Desktop perfomance leaderboard](assets/lighthousedesktop-leaderboard.jpg)
-+ # Desktop Leaderboard Score
- ![Desktop perfomance score](assets/lighthousedesktop-leaderboardscore.jpg)
-+ # Desktop Question Page
- ![Desktop perfomance questions page](assets/lighthousedesktop-questionspage.jpg)
-+ # Desktop Qeustions page Score
- ![Desktop perfomance questions page score](assets/lighthousedesktop-questionspagescore.jpg)
+ ![Desktop performance](assets/images/smoothie-desktoplh-home.jpg)
++ # Desktop Recipes 
+ ![Desktop performance](assets/images/smoothie-desktoplh-recipes.jpg)
++ # Desktop Login
+ ![Desktop performance](assets/images/smoothie-desktoplh-login.jpg)
 + # Mobile view Home screen
- ![Mobile perfomance Home](assets/images/smoothie-homelh.jpg)
+ ![Mobile performance Home](assets/images/smoothie-homelh.jpg)
  + # Mobile view Recipes  Page
- ![Mobile perfomance recipes page](assets/images/smoothie-recipeslh.jpg)
+ ![Mobile performance recipes page](assets/images/smoothie-recipeslh.jpg)
  + # Mobile view login page
- ![Mobile perfomance login page](assets/images/smoothie-loginlh.jpg)
+ ![Mobile performance login page](assets/images/smoothie-loginlh.jpg)
  + # Mobile view Dashboard  page
  ![Mobile perfomance game rules](assets/images/smoothie-dashboardlh.jpg)
  + # Mobile view Signup page
- ![Mobile perfomance signup](assets/images/smoothie-signuplh.jpg)
+ ![Mobile performance signup](assets/images/smoothie-signuplh.jpg)
  + # Mobile view Edit page
- ![Mobile perfomance edit page](assets/images/smoothie-editlh.jpg)
+ ![Mobile performance edit page](assets/images/smoothie-editlh.jpg)
 
  ## Deployment & Local Development
 
