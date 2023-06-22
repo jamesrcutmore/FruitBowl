@@ -27,7 +27,7 @@ A live website can be found [here](https://fruit-bowl-877b7553ee20.herokuapp.com
 # **About** 
 -  Fruitbowl is a place for smoothies recipes.
 
--  Fruit has full C.R.U.D functionality.
+-  Fruitbowl has full C.R.U.D functionality.
 
 -  It is a platform for smoothies lovers to explore and share smoothies recipes with one another.
 
