@@ -27,7 +27,10 @@ A live website can be found [here](https://fruit-bowl-877b7553ee20.herokuapp.com
 # **About** 
 -  Fruitbowl is a place for smoothies recipes.
 
--  It is a platform for smoothies lovers to explore and share smoothies recipes with one another. 
+-  Fruit has full C.R.U.D functionality.
+
+-  It is a platform for smoothies lovers to explore and share smoothies recipes with one another.
+
 -  The users also have the the  option of holding an account, there they can add, edit and delete the their own recipes.
 
 -  The user will be able to log in to there own recipes ,delete and edit,
@@ -47,8 +50,9 @@ As a general user:
 
 ### **Project Goals**
 
-- The project goal is to provide a platform for users who love smoothies to explore new recipes and also add more recipes to 
-  share them with other users. As more and more users starting using the service, the website become a free resource.
+- The project goal is to provide a platform for users who love smoothies to explore new recipes and also add more recipes 
+  with C.R.U.D functionality. 
+  These can be shared  with other users. As more and more users starting using the service, the website become a free resource.
 
 ### **Target Audience**
 
@@ -272,23 +276,23 @@ Insperation was gained from coolors pallete.
 
 [Balsamiq](https://balsamiq.com/)
 
-The wireframes were created using Balsamiq.
+ The wireframes were created using Balsamiq.
 
 [Google DevTools](https://developer.chrome.com/docs/devtools/)
 
  Google DevTools was extensively used throughout the project for various styling, testing and debugging purposes.
 
- [Am I Responsive](http://ami.responsivedesign.is/)
+[Am I Responsive](http://ami.responsivedesign.is/)
 
- Am I responsive has been used to test the responsiveness of the site and also to create the mock-up image presented at the start of this document.
+Am I responsive has been used to test the responsiveness of the site and also to create the mock-up image presented at the start of this document.
 
 [W3C Markup Validation service](https://validator.w3.org/)
 
-   W3C Markup Validation Service has been used to test the HTML codes.
+ W3C Markup Validation Service has been used to test the HTML codes.
 
- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+[W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
-   W3C CSS Validation Service has been used to test the CSS codes.
+W3C CSS Validation Service has been used to test the CSS codes.
 
    ---
    
@@ -355,10 +359,9 @@ The wireframes were created using Balsamiq.
 
 # Known bugs
 
- ![Known bugs](assets/known-bugs.jpg)
+![Known bugs](assets/known-bugs.jpg)
 
- + Game rules instruction's would initianly not implement, however after rectifying a class for an id in the code the   
-   problem was solved.
+ + Initially whenyou where logged in , it would stay show as logged in.
 ---
 + Solved bug
 
@@ -374,17 +377,23 @@ The wireframes were created using Balsamiq.
  ![Desktop performance](assets/images/smoothie-desktoplh-recipes.jpg)
 + # Desktop Login
  ![Desktop performance](assets/images/smoothie-desktoplh-login.jpg)
+ + # Desktop Dashboard
+ ![Desktop performance](assets/images/smoothie-desktoplh-dashboard.jpg)
+ + # Desktop Sign up
+ ![Desktop performance](assets/images/smoothie-desktoplh-signup.jpg)
+ + # Desktop Edit page
+ ![Desktop performance](assets/images/smoothie-desktoplh-edit.jpg)
 + # Mobile view Home screen
  ![Mobile performance Home](assets/images/smoothie-homelh.jpg)
- + # Mobile view Recipes  Page
++ # Mobile view Recipes  Page
  ![Mobile performance recipes page](assets/images/smoothie-recipeslh.jpg)
- + # Mobile view login page
++ # Mobile view login page
  ![Mobile performance login page](assets/images/smoothie-loginlh.jpg)
- + # Mobile view Dashboard  page
++ # Mobile view Dashboard  page
  ![Mobile perfomance game rules](assets/images/smoothie-dashboardlh.jpg)
- + # Mobile view Signup page
++ # Mobile view Sign up page
  ![Mobile performance signup](assets/images/smoothie-signuplh.jpg)
- + # Mobile view Edit page
++ # Mobile view Edit page
  ![Mobile performance edit page](assets/images/smoothie-editlh.jpg)
 
  ## Deployment & Local Development
