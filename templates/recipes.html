@@ -1,43 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-            <div class="col-sm">
-  
-            <div id="recipes"></div>
+    <div class="col-sm">
 
-                {% for recipe in data.recipes %}
-                <div class='recipe'>
-                    <div class="recipe-details">
-                        <h2> <a href="edit-recipe/{{recipe._id}}">{{recipe.title}}</a></h2>
-                        <p>{{recipe.description}}</p>
-                        <h3>Ingredients</h3>
-                        <ul>
-                            {%for ingredient in recipe.ingredients%}
-                                <li>{{ingredient}}</li>
-                            {%endfor %}
-                        </ul>
-                    
-                        <h3>Method</h3>
-                        <ul>
-                            {%for method in recipe.method%}
-                                <li>{{method}}</li>
-                            {%endfor %}
-                        </ul>
-                    </div>
-                    <img src="{{recipe.imageURL}}" />
+        <div id="recipes">
+
+            {% for recipe in data.recipes %}
+            <div class='recipe'>
+                <div class="recipe-details">
+                    <h2> <a href="edit-recipe/{{recipe._id}}">{{recipe.title}}</a></h2>
+                    <p>{{recipe.description}}</p>
+                    <h3>Ingredients</h3>
+                    <ul>
+                        {%for ingredient in recipe.ingredients%}
+                            <li>{{ingredient}}</li>
+                        {%endfor %}
+                    </ul>
+                
+                    <h3>Method</h3>
+                    <ul>
+                        {%for method in recipe.method%}
+                            <li>{{method}}</li>
+                        {%endfor %}
+                    </ul>
                 </div>
-
-                {%endfor %}
-
-    
+                <img src="{{recipe.imageURL}}"  alt="recipe image">
             </div>
+
+            {%endfor %}
+
 
         </div>
 
-       
-
     </div>
 
- 
-
-    {% endblock %}
+{% endblock %}
