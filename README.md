@@ -198,10 +198,47 @@ As the site owner/admin:
 
 - social media links on footer.
 
+
+**_Recipes avaliable to all users_**
+
+All recipes are avaliable to all users, so that all users will get to taste what the website is all about, and what they can experience, then decide if they would like to explore more functionalities of the website.
+
+**_Users can search recipes based on either key words or ingredients_**
+
+For smoothies, most people may not familiar with a specific name. The main ingredient or the main liquid is what people look at when it comes to searching. This feature will meet this particular user need.
+
+**_Slides diplayed on all recipes page to showcase various category of smoothies_**
+
+The slides show the users of different types of smoothies with a tagline explaining what the benefits are.
+
+**_Users can view full recipe_**
+
+Users can access the full recipe page and view the ingredients and method, smoothie category and the username of the recipe creator.
+
+**_Users account management_**
+
+- **Register** Users have the option to create an account.
+
+- **LogIn** registered users can access their account by logging in.
+
+- **LogOut** Once the user finished using the site, they have a option of logging out the website.
+
+**_Users Recipes management_**
+
+A registered user will be able to upload their own recipes to the site. All access is shown on my recipes page.
+
+- Upload: users are asked to fill up a form to upload a recipe. The form is validated. It means that the user cannot leave any inputs blank and white spaces.( Ingriedients and method are comm seperated )
+
+- Edit: the user can edit their own recipes on my recipes page by hover over the recipe image and click on edit button. They will be shown the form their filled out when they created the recipe, they can make changes and save.( Ingriedients and method are comm seperated ) .
+
+- Delete: the user can delete their own recipes by clicking on the delete button when hovering over the recipe image. A confirmation message modal will pop up to confirm deletion.
+
+
 # **Features Left to Implement**
 + To have more individual recipes catogories.
 + To have a better colour scheme.
 + To be able to search individual ingriedients.
++ Calorie count would have been a great feature.
 + To have added more content in general.
 ---
 
@@ -359,13 +396,13 @@ W3C CSS Validation Service has been used to test the CSS codes.
 
 # Known bugs
 
-![Known bugs](assets/known-bugs.jpg)
+![Known bugs](assets/images/known-bugs.jpg)
 
- + Initially whenyou where logged in , it would stay show as logged in.
+ + Initially when you where logged in , it would stay show as logged in , in the nav bar.
 ---
-+ Solved bug
++ Solved bug, (typo in code, found in app.py)
 
-![Known fixed bugs](assets/known-fixedbug.jpg)
+![Known fixed bugs](assets/images/known-fixedbug.jpg)
 
 
 
