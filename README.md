@@ -227,6 +227,8 @@ Users can access the full recipe page and view the ingredients and method, smoot
 
 A registered user will be able to upload their own recipes to the site. All access is shown on my recipes page.
 
+- rob_cutmore@hotmail.com- password- Hutton.. can be used to edit the kiwi smoothie after the link fo kiwi smoothie is clicked. other smoothie links are for other users, and only they can edit.
+
 - Upload: users will be asked to fill up a form to upload a recipe. The form is validated. It means that the user cannot leave any inputs blank and white spaces.( Ingriedients and method are comm seperated )
 
 - Edit: the user can edit their own recipes on my recipes page by hover over the recipe image and click on edit button. They will be shown the form their filled out when they created the recipe, they can make changes and save.( Ingriedients and method are comm seperated ) .
