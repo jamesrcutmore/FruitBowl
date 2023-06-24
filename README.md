@@ -227,7 +227,7 @@ Users can access the full recipe page and view the ingredients and method, smoot
 
 A registered user will be able to upload their own recipes to the site. All access is shown on my recipes page.
 
-- Upload: users are asked to fill up a form to upload a recipe. The form is validated. It means that the user cannot leave any inputs blank and white spaces.( Ingriedients and method are comm seperated )
+- Upload: users will be asked to fill up a form to upload a recipe. The form is validated. It means that the user cannot leave any inputs blank and white spaces.( Ingriedients and method are comm seperated )
 
 - Edit: the user can edit their own recipes on my recipes page by hover over the recipe image and click on edit button. They will be shown the form their filled out when they created the recipe, they can make changes and save.( Ingriedients and method are comm seperated ) .
 
@@ -390,6 +390,7 @@ W3C CSS Validation Service has been used to test the CSS codes.
  - W3C Validation was used:
  - HTML
  - CSS
+ - pip8 was used for python.
  - JS Hint was used to validate javascript.
 
  #  Links to above mentioned are in languages used.
@@ -427,7 +428,7 @@ W3C CSS Validation Service has been used to test the CSS codes.
 + # Mobile view login page
  ![Mobile performance login page](assets/images/smoothie-loginlh.jpg)
 + # Mobile view Dashboard  page
- ![Mobile perfomance game rules](assets/images/smoothie-dashboardlh.jpg)
+ ![Mobile perfomance dashboard](assets/images/smoothie-dashboardlh.jpg)
 + # Mobile view Sign up page
  ![Mobile performance signup](assets/images/smoothie-signuplh.jpg)
 + # Mobile view Edit page
