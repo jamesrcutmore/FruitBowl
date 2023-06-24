@@ -207,9 +207,6 @@ All recipes are avaliable to all users, so that all users will get to taste what
 
 For smoothies, most people may not familiar with a specific name. The main ingredient or the main liquid is what people look at when it comes to searching. This feature will meet this particular user need.
 
-**_Slides diplayed on all recipes page to showcase various category of smoothies_**
-
-The slides show the users of different types of smoothies with a tagline explaining what the benefits are.
 
 **_Users can view full recipe_**
 
@@ -222,6 +219,8 @@ Users can access the full recipe page and view the ingredients and method, smoot
 - **LogIn** registered users can access their account by logging in.
 
 - **LogOut** Once the user finished using the site, they have a option of logging out the website.
+
+- **Dashboard** for users to add there recipes.
 
 **_Users Recipes management_**
 
