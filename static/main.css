@@ -1,6 +1,9 @@
 nav {
     background-color: #FFA07A !important;
 }
+.navbar-light .navbar-nav .nav-link, .navbar .navbar-brand{
+    color: #007bff;
+}
 
 .col-sm img {
     width: 100%;
